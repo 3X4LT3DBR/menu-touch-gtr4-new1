@@ -10,6 +10,6 @@
   "author": "3X4LT3DBR",
   "license": "ISC",
   "devDependencies": {
-    "@zeppos/device-types": "^2.0.0"
+    "@zeppos/device-types": "^3.0.0"
   }
 }
