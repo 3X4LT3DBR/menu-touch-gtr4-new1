@@ -1,0 +1,37 @@
+name: Build Zepp OS ZAB
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Zeus CLI
+        run: npm install -g @zeppos/zeus-cli
+
+      - name: Show Zeus version
+        run: zeus --version
+
+      - name: Build ZAB
+        run: zeus build
+
+      - name: List build output
+        if: always()
+        run: find . -maxdepth 3 -type f | sort
+
+      - name: Upload ZAB
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: menu-touch-gtr4-new1-zab
+          path: dist/**
+          if-no-files-found: error
