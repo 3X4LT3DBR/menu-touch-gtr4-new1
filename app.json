@@ -9,7 +9,8 @@
       "name": "1.0.0"
     },
     "vender": "3X4LT3DBR",
-    "description": "Menu touch experimental para Amazfit GTR 4 New"
+    "description": "Menu touch experimental para Amazfit GTR 4 New",
+    "icon": "icon.png"
   },
   "permissions": [],
   "runtime": {
