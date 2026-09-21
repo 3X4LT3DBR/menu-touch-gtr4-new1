@@ -1,0 +1,35 @@
+name: Validate Zepp OS project
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check project files
+        run: |
+          test -f app.json
+          test -f page/index.js
+          node -e "JSON.parse(require('fs').readFileSync('app.json','utf8')); console.log('app.json OK')"
+
+      - name: Save project bundle
+        run: |
+          mkdir -p output
+          zip -r output/menu-touch-gtr4-new1-source.zip app.json page README.md .gitignore
+
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: menu-touch-gtr4-new1
+          path: output/menu-touch-gtr4-new1-source.zip
