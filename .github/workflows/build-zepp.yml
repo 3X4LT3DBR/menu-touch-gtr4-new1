@@ -20,6 +20,10 @@ jobs:
           ls -la
           test -f app.js
           test -f app.json
+          test -f icon.png
+          file icon.png
+          ls -lh icon.png
+          cat app.json
           test -f page/index.js
 
       - name: Setup Node.js
