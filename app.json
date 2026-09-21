@@ -1,0 +1,33 @@
+{
+  "configVersion": "v3",
+  "app": {
+    "appId": 1000001,
+    "appName": "Menu Touch",
+    "appType": "app",
+    "version": {
+      "code": 1,
+      "name": "1.0.0"
+    },
+    "icon": "icon.png",
+    "vender": "3X4LT3DBR",
+    "description": "Menu touch experimental para Amazfit GTR 4 New"
+  },
+  "runtime": {
+    "apiVersion": {
+      "compatible": "2.0.0",
+      "target": "2.0.0",
+      "minVersion": "2.0.0"
+    }
+  },
+  "targets": {
+    "Amazfit GTR 4 New": {
+      "module": {
+        "page": {
+          "pages": ["page/index"]
+        }
+      },
+      "platforms": ["Amazfit GTR 4 New"],
+      "designWidth": 480
+    }
+  }
+}
