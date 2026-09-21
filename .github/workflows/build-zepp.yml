@@ -9,6 +9,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Verify project files
+        run: |
+          echo "Commit checked out:"
+          git rev-parse HEAD
+          echo "Root files:"
+          ls -la
+          test -f app.js
+          test -f app.json
+          test -f page/index.js
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -22,11 +34,13 @@ jobs:
         run: zeus --version
 
       - name: Build ZAB
-        run: zeus build
+        run: |
+          zeus build
+          test -d dist
 
       - name: List build output
         if: always()
-        run: find . -maxdepth 3 -type f | sort
+        run: find . -maxdepth 4 -type f | sort
 
       - name: Upload ZAB
         if: success()
