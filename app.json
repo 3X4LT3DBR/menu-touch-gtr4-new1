@@ -1,5 +1,5 @@
 {
-  "configVersion": "v3",
+  "configVersion": "v2",
   "app": {
     "appId": 1128084,
     "appName": "Menu Touch GTR 4 New",
@@ -14,13 +14,13 @@
   "permissions": [],
   "runtime": {
     "apiVersion": {
-      "compatible": "3.0",
-      "target": "3.0",
-      "minVersion": "3.0"
+      "compatible": "2.0",
+      "target": "2.0",
+      "minVersion": "2.0"
     }
   },
   "targets": {
-    "gt": {
+    "gt4": {
       "module": {
         "page": {
           "pages": [
@@ -30,8 +30,16 @@
       },
       "platforms": [
         {
-          "st": "r",
-          "dw": 480
+          "name": "gtr4",
+          "deviceSource": 7930112
+        },
+        {
+          "name": "gtr4",
+          "deviceSource": 7930113
+        },
+        {
+          "name": "gtr4",
+          "deviceSource": 7864577
         }
       ],
       "designWidth": 480
