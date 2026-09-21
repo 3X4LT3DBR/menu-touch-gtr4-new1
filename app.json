@@ -17,11 +17,10 @@
       "compatible": "2.0.0",
       "target": "2.0.0",
       "minVersion": "2.0.0"
-    },
-    "type": 0
+    }
   },
   "targets": {
-    "gtr4-new": {
+    "default": {
       "module": {
         "page": {
           "pages": [
@@ -31,9 +30,8 @@
       },
       "platforms": [
         {
-          "name": "gtr4-new",
           "st": "r",
-          "sr": "w480"
+          "dw": 480
         }
       ],
       "designWidth": 480
