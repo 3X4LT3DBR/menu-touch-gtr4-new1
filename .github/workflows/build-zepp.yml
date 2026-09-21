@@ -47,5 +47,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: menu-touch-gtr4-new1-zab
-          path: dist/**
+          path: dist
           if-no-files-found: error
+          include-hidden-files: true
